@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="48" started-at="2017-07-23T07:03:05Z" finished-at="2017-07-23T07:03:05Z">
+  <suite name="Default suite" duration-ms="11199" started-at="2017-07-31T08:22:05Z" finished-at="2017-07-31T08:22:16Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="48" started-at="2017-07-23T07:03:05Z" finished-at="2017-07-23T07:03:05Z">
-      <class name="com.krishna.ci.DemoCode">
-        <test-method status="PASS" signature="demoMethod()[pri:0, instance:com.krishna.ci.DemoCode@5e5792a0]" name="demoMethod" duration-ms="16" started-at="2017-07-23T12:33:05Z" finished-at="2017-07-23T12:33:05Z">
+    <test name="Default test" duration-ms="11199" started-at="2017-07-31T08:22:05Z" finished-at="2017-07-31T08:22:16Z">
+      <class name="com.krishna.ci.TestConfigFile">
+        <test-method status="PASS" signature="FetchData()[pri:0, instance:com.krishna.ci.TestConfigFile@ae45eb6]" name="FetchData" duration-ms="11158" started-at="2017-07-31T13:52:05Z" finished-at="2017-07-31T13:52:16Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- demoMethod -->
-      </class> <!-- com.krishna.ci.DemoCode -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- FetchData -->
+      </class> <!-- com.krishna.ci.TestConfigFile -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

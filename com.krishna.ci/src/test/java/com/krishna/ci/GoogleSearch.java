@@ -1,56 +1,13 @@
 package com.krishna.ci;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class GoogleSearch {
+public class GoogleSearch extends BaseTest{
 	
-	public WebDriver driver;
 	JavascriptExecutor jse;
-	String Browser = "chrome";
-	@BeforeClass
-	public void Start(){
-		try {
-			
-			if(Browser == "ff"){
-			System.out.println("Launching Firefox browser");
-			System.setProperty("webdriver.gecko.driver", "src/main/resources/ffDriver/geckodriver.exe");
-			driver=new FirefoxDriver();
-			driver.manage().deleteAllCookies();
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-			}
-			else if(Browser == "chrome"){
-				
-				System.out.println("Launching Chrome browser");
-				System.setProperty("webdriver.chrome.driver", "src/main/resources/chromeDriver/chromedriver.exe");
-			driver = new ChromeDriver();
-			driver.manage().deleteAllCookies();
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-				
-			}
-			
-			else{
-				
-				System.out.println("Select a valid browser");
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@Test
+	@Test(priority = 1, description="This test case will perform Google search")
 	public void demoMethod() throws InterruptedException{
 		
 		System.out.println("Integrated Eclipse - Selenium - Maven - GIT");
@@ -69,13 +26,18 @@ public class GoogleSearch {
 		driver.findElement(By.linkText("Next")).isDisplayed();
 		System.out.println("Next link is displayed");
 		driver.findElement(By.linkText("Next")).click();
+		driver.navigate().back();
+		Thread.sleep(2000);
+		driver.navigate().forward();
+		Thread.sleep(2000);
+		driver.navigate().refresh();
 	}
 	
-	@AfterClass
-	public void End() throws InterruptedException{
-		System.out.println("Closing browser");
-		Thread.sleep(4000);
-		driver.close();
-		//driver.quit();
+	@Test(dependsOnMethods="demoMethod")
+	public void TestGoogle(){
+		System.out.println("Learning testNG");
+		
 	}
+	
+	
 }

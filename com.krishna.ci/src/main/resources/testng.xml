@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Selenium Suite">
-  <test name="Refresh basics">
+<suite thread-count="2" verbose="5" name="Selenium Suite" parallel="tests" >
+  <test name="Google">
+  <parameter name="Browser" value="chrome"/>
     <classes>
       <class name="com.krishna.ci.GoogleSearch"/>
     </classes>
   </test> 
+  
+  <test name="Property file data">
+  	<parameter name="Browser" value="ff"></parameter>
+  		<classes>
+  			<class name="com.krishna.ci.TestConfigFile"></class>
+  		</classes>
+  </test>
+  
 </suite> 
